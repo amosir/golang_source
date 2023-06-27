@@ -1,9 +1,14 @@
 package main
 
-func main() {
-	s := make([]int, 2, 4)
-	s = append(s, 2)
-	s = append(s, 3)
-}
+import "fmt"
 
-// go tool compile -S -N -l main.go > main.s
+func main() {
+	s := make([]int, 0, 10)
+	s = append(s, 1)
+	fmt.Printf("len: %d, cap: %d\n", len(s), cap(s))
+
+	s1 := make([]int, 10, 10)
+	s1 = append(s1, 1)
+	fmt.Printf("len: %d, cap: %d\n", len(s1), cap(s1))
+
+}
